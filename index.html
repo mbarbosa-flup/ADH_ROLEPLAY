@@ -72,11 +72,6 @@
       border-radius:16px;
       padding:12px;
     }
-    .pista strong{
-      display:block;
-      margin-bottom:4px;
-      color:var(--primary-dark);
-    }
     .field{
       margin-bottom:12px;
     }
@@ -84,15 +79,10 @@
       width:100%;
       padding:12px;
       border-radius:12px;
-      border:2px solid var(--line);
-      font-size:15px;
+      border:1px solid #ccc;
     }
-    textarea{min-height:150px;}
-    .check{
-      background:var(--soft);
-      border-radius:14px;
-      padding:12px;
-      margin-top:10px;
+    textarea{
+      min-height:150px;
     }
     .actions{
       margin-top:10px;
@@ -100,60 +90,55 @@
     .btn{
       width:100%;
       padding:12px;
-      border-radius:14px;
       border:none;
+      border-radius:12px;
       margin-bottom:8px;
-      font-weight:700;
       cursor:pointer;
+      font-weight:bold;
     }
-    .primary{background:var(--primary);color:#fff;}
-    .secondary{background:#fff;border:2px solid var(--primary);color:var(--primary);}
-    .small{font-size:12px;text-align:center;margin-top:5px;}
-    .ok{display:none;color:green;margin-top:5px;}
+    .primary{background:#0b6f95;color:white;}
+    .secondary{background:white;border:2px solid #0b6f95;color:#0b6f95;}
   </style>
 </head>
 
 <body>
+
 <div class="wrap">
 
-<section class="hero">
-  <h1>Quem trabalhava para tornar possível a riqueza do comércio ultramarino português?</h1>
-  <p class="intro">
-    Com base no que aprendeste hoje, escreve com as tuas próprias palavras quem trabalhava para tornar possível esta riqueza.
-  </p>
+<div class="hero">
+<h1>Quem trabalhava para tornar possível a riqueza do comércio ultramarino português?</h1>
+<p class="intro">Com base no que aprendeste hoje, escreve com as tuas palavras quem trabalhava para tornar possível esta riqueza.</p>
+</div>
 
-  <p style="margin-top:10px; font-weight:700; color:#0b6f95;">
-    Desafio: explica não só quem trabalhava, mas também que tarefas realizava e quem beneficiava desse trabalho.
-  </p>
-</section>
+<div class="card">
+<div class="tag">Pistas</div>
 
-<section class="card">
-  <div class="tag">Pistas</div>
+<div class="pistas">
 
-  <div class="pistas">
-    <div class="pista">
-      <strong>Quem lucrava mais?</strong>
-      <span>A Coroa e grupos ligados ao comércio</span>
-    </div>
+<div class="pista">
+<strong>Quem lucrava mais?</strong><br>
+A Coroa e os grupos ligados ao comércio
+</div>
 
-    <div class="pista">
-      <strong>Que trabalhos eram necessários?</strong>
-      <span>Produzir, transportar, carregar, pesar e registar mercadorias</span>
-    </div>
+<div class="pista">
+<strong>Que trabalhos eram necessários?</strong><br>
+Produzir, transportar, carregar, pesar e registar mercadorias
+</div>
 
-    <div class="pista">
-      <strong>Pensa em quem participava no comércio:</strong>
-      <span>Marinheiros, trabalhadores portuários, mercadores e outros grupos envolvidos</span>
-    </div>
+<div class="pista">
+<strong>Quem participava?</strong><br>
+Marinheiros, trabalhadores portuários, mercadores e outros grupos envolvidos no comércio
+</div>
 
-    <div class="pista">
-      <strong>O que vais descobrir na próxima aula?</strong>
-      <span>Quem tornava possível esta riqueza e a que custo humano</span>
-    </div>
-  </div>
-</section>
+<div class="pista">
+<strong>O que vais descobrir?</strong><br>
+Quem tornava possível esta riqueza e a que custo humano
+</div>
 
-<section class="card">
+</div>
+</div>
+
+<div class="card">
 
 <div class="field">
 <input id="nome" placeholder="Nome">
@@ -164,51 +149,34 @@
 </div>
 
 <div class="field">
-<textarea id="sintese" placeholder="Escreve aqui a tua resposta..."></textarea>
-</div>
-
-<div class="check">
-Antes de terminares, verifica se referiste:
-<ul>
-<li>quem trabalhava</li>
-<li>que tarefas realizavam</li>
-<li>quem beneficiava</li>
-</ul>
+<textarea id="texto" placeholder="Escreve aqui a tua resposta..."></textarea>
 </div>
 
 <div class="actions">
-<button class="btn primary" id="downloadBtn">Descarregar resposta</button>
-<button class="btn secondary" id="emailBtn">Abrir email</button>
-<div class="small">Usa as pistas e as fontes da aula.</div>
-<div class="ok" id="okBox">Guardado!</div>
+<button class="btn primary" onclick="download()">Descarregar resposta</button>
+<button class="btn secondary" onclick="email()">Enviar por email</button>
 </div>
 
-</section>
+</div>
 
 </div>
 
 <script>
 
-const nome=document.getElementById('nome');
-const turma=document.getElementById('turma');
-const sintese=document.getElementById('sintese');
-const okBox=document.getElementById('okBox');
+function download(){
+  let nome=document.getElementById("nome").value;
+  let texto=document.getElementById("texto").value;
 
-function buildText(){
- return nome.value+"\n"+turma.value+"\n\n"+sintese.value;
+  let blob=new Blob([nome+"\n\n"+texto],{type:"text/plain"});
+  let a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="tpc.txt";
+  a.click();
 }
 
-document.getElementById('downloadBtn').onclick=()=>{
- let blob=new Blob([buildText()],{type:'text/plain'});
- let a=document.createElement('a');
- a.href=URL.createObjectURL(blob);
- a.download="tpc.txt";
- a.click();
- okBox.style.display='block';
-}
-
-document.getElementById('emailBtn').onclick=()=>{
- window.location.href="mailto:up202510257@up.pt?subject=TPC&body="+encodeURIComponent(buildText());
+function email(){
+  let texto=document.getElementById("texto").value;
+  window.location.href="mailto:up202510257@up.pt?subject=TPC&body="+encodeURIComponent(texto);
 }
 
 </script>
