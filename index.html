@@ -45,7 +45,6 @@
       margin:0;
       font-size:16px;
       line-height:1.45;
-      color:var(--ink);
     }
     .card{
       background:var(--card);
@@ -70,385 +69,149 @@
     }
     .pista{
       background:var(--soft);
-      border:1px solid #d6eaf3;
       border-radius:16px;
       padding:12px;
     }
     .pista strong{
       display:block;
-      color:var(--primary-dark);
       margin-bottom:4px;
-      font-size:15px;
-    }
-    .pista span{
-      font-size:14px;
-      line-height:1.35;
-      color:var(--muted);
+      color:var(--primary-dark);
     }
     .field{
       margin-bottom:12px;
     }
-    label{
-      display:block;
-      font-weight:700;
-      color:var(--primary-dark);
-      margin-bottom:6px;
-      font-size:15px;
-    }
     input, textarea{
       width:100%;
+      padding:12px;
+      border-radius:12px;
       border:2px solid var(--line);
-      border-radius:15px;
-      padding:13px 14px;
-      font-size:16px;
-      background:#fff;
-      color:var(--ink);
-      outline:none;
+      font-size:15px;
     }
-    textarea{
-      min-height:180px;
-      resize:vertical;
-      line-height:1.5;
-    }
-    input:focus, textarea:focus{
-      border-color:var(--primary);
-    }
-    .hint{
-      font-size:13px;
-      color:var(--muted);
-      margin-top:6px;
-      line-height:1.35;
-    }
+    textarea{min-height:150px;}
     .check{
       background:var(--soft);
-      border-radius:16px;
-      padding:12px 14px;
-      border:1px solid #d6eaf3;
+      border-radius:14px;
+      padding:12px;
       margin-top:10px;
     }
-    .check h3{
-      margin:0 0 8px;
-      font-size:15px;
-      color:var(--primary-dark);
-    }
-    .check ul{
-      margin:0;
-      padding-left:18px;
-      font-size:14px;
-      line-height:1.45;
-    }
     .actions{
-      position:sticky;
-      bottom:0;
-      background:linear-gradient(to top, rgba(207,227,239,1) 70%, rgba(207,227,239,0));
-      padding-top:10px;
-      margin-top:8px;
+      margin-top:10px;
     }
     .btn{
       width:100%;
-      border:none;
-      border-radius:16px;
-      padding:14px 16px;
-      font-size:16px;
-      font-weight:700;
-      margin-bottom:10px;
-      cursor:pointer;
-    }
-    .btn.primary{
-      background:var(--primary);
-      color:#fff;
-    }
-    .btn.secondary{
-      background:#fff;
-      color:var(--primary);
-      border:2px solid var(--primary);
-    }
-    .small{
-      text-align:center;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.35;
-      margin-top:6px;
-    }
-
-    .sources-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:10px;
-      margin-top:10px;
-    }
-    .source-btn{
-      border:none;
+      padding:12px;
       border-radius:14px;
-      padding:12px 10px;
-      background:#0b6f95;
-      color:#fff;
-      font-size:15px;
+      border:none;
+      margin-bottom:8px;
       font-weight:700;
       cursor:pointer;
     }
-    .source-btn span{
-      display:block;
-      font-size:12px;
-      font-weight:400;
-      opacity:.95;
-      margin-top:4px;
-      line-height:1.25;
-    }
-    .modal{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.78);
-      z-index:9999;
-      padding:14px;
-      overflow:auto;
-    }
-    .modal-content{
-      max-width:900px;
-      margin:0 auto;
-      background:#fff;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 12px 28px rgba(0,0,0,.35);
-    }
-    .modal-head{
-      background:#0b6f95;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 14px;
-      position:sticky;
-      top:0;
-    }
-    .modal-head h3{
-      margin:0;
-      font-size:18px;
-      line-height:1.2;
-    }
-    .close-btn{
-      border:none;
-      background:#fff;
-      color:#0b6f95;
-      border-radius:999px;
-      padding:8px 12px;
-      font-weight:700;
-      cursor:pointer;
-      font-size:14px;
-      flex-shrink:0;
-    }
-    .modal-body{
-      padding:10px;
-      background:#e9f4f9;
-    }
-    .modal-body iframe{
-      display:block;
-      width:100%;
-      min-height:78vh;
-      border:none;
-      border-radius:12px;
-      background:#fff;
-    }
-
-    .ok{
-      display:none;
-      margin-top:10px;
-      background:#eaf8f2;
-      color:#0a7a50;
-      border:1px solid #bfe4cf;
-      border-radius:14px;
-      padding:10px 12px;
-      font-size:14px;
-      font-weight:700;
-    }
+    .primary{background:var(--primary);color:#fff;}
+    .secondary{background:#fff;border:2px solid var(--primary);color:var(--primary);}
+    .small{font-size:12px;text-align:center;margin-top:5px;}
+    .ok{display:none;color:green;margin-top:5px;}
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <section class="hero">
-      <h1>Quem trabalhava para tornar possível a riqueza do comércio ultramarino português?</h1>
-      <p class="intro">Com base no que aprendeste hoje, escreve com as tuas próprias palavras quem trabalhava para tornar possível esta riqueza. Usa as pistas para te orientares.</p>
-    </section>
+<div class="wrap">
 
-    <section class="card">
-      <div class="tag">Pistas para pensar</div>
-      <div class="pistas">
-        <div class="pista">
-          <strong>Quem lucrava mais?</strong>
-          <span>A Coroa e os grupos ligados ao comércio</span>
-        </div>
-        <div class="pista">
-          <strong>Que trabalhos eram necessários?</strong>
-          <span>Produzir, transportar, carregar, pesar e registar mercadorias</span>
-        </div>
-        <div class="pista">
-          <strong>Pensa em quem produzia, transportava ou vendia as mercadorias: marinheiros, trabalhadores portuários, mercadores...</strong>
-          <span>Marinheiros, trabalhadores portuários, mercadores e </span>
-        </div>
-        <div class="pista">
-          <strong>O que vais descobrir na próxima aula?</strong>
-          <span>Quem tornava possível esta riqueza e a que custo humano</span>
-        </div>
-      </div>
-    </section>
+<section class="hero">
+  <h1>Quem trabalhava para tornar possível a riqueza do comércio ultramarino português?</h1>
+  <p class="intro">
+    Com base no que aprendeste hoje, escreve com as tuas próprias palavras quem trabalhava para tornar possível esta riqueza.
+  </p>
 
-    <section class="card">
-      <div class="tag">Identificação do aluno</div>
+  <p style="margin-top:10px; font-weight:700; color:#0b6f95;">
+    Desafio: explica não só quem trabalhava, mas também que tarefas realizava e quem beneficiava desse trabalho.
+  </p>
+</section>
 
-      <div class="field">
-        <label for="nome">Nome do aluno</label>
-        <input id="nome" type="text" autocomplete="name" />
-      </div>
+<section class="card">
+  <div class="tag">Pistas</div>
 
-      <div class="field">
-        <label for="turma">Turma</label>
-        <input id="turma" type="text" />
-      </div>
+  <div class="pistas">
+    <div class="pista">
+      <strong>Quem lucrava mais?</strong>
+      <span>A Coroa e grupos ligados ao comércio</span>
+    </div>
 
-      <div class="field">
-        <label for="sintese">📝 Resposta</label>
-        <textarea id="sintese" placeholder="Com base no que aprendeste hoje, responde em 3 a 4 linhas: quem trabalhava para tornar possível a riqueza do comércio ultramarino português?"></textarea>
-        <div class="hint">Com base no que aprendeste hoje, responde em 3 a 4 linhas: quem trabalhava para tornar possível a riqueza do comércio ultramarino português?</div>
-      </div>
+    <div class="pista">
+      <strong>Que trabalhos eram necessários?</strong>
+      <span>Produzir, transportar, carregar, pesar e registar mercadorias</span>
+    </div>
 
-      <div class="check">
-        <h3>Antes de terminares, verifica se referiste:</h3>
-        <ul>
-          <li>quem podia trabalhar na produção ou circulação das mercadorias;</li>
-          <li>tarefas como transportar, carregar, registar ou pesar;</li>
-          <li>quem lucrava mais com esse comércio;</li>
-          <li>a ideia de que a riqueza exigia muito trabalho humano.</li>
-        </ul>
-      </div>
+    <div class="pista">
+      <strong>Pensa em quem participava no comércio:</strong>
+      <span>Marinheiros, trabalhadores portuários, mercadores e outros grupos envolvidos</span>
+    </div>
 
-      
-      <div class="check" style="margin-top:12px;">
-        <h3>Consulta novamente as fontes da aula:</h3>
-        <div class="sources-grid">
-          <button type="button" class="source-btn" data-title="F5 — Rotas e produtos do comércio ultramarino" data-img="https://drive.google.com/file/d/1J9B66b3OWnvyYGNFMDfw0LY_cGdyRQKk/preview">F5<span>Mapa das rotas e produtos</span></button>
-          <button type="button" class="source-btn" data-title="F6 — Novos mercados e produtos do ultramar" data-img="https://drive.google.com/file/d/1diQ6OHnuRtNFYCgty-YAXMtLox5jXvOO/preview">F6<span>Excerto sobre mercados e reexportação</span></button>
-          <button type="button" class="source-btn" data-title="F7 — O porto de Lisboa no século XVI" data-img="https://drive.google.com/file/d/1_PJ-ZeW1OqT4EgVofz0qN8GIE4S3DH9W/preview">F7<span>Lisboa, centro do comércio</span></button>
-          <button type="button" class="source-btn" data-title="F8 — Instrumento de pesagem comercial" data-img="https://drive.google.com/file/d/1W-c_bG40i5oM8zQ_jYEFDAaB-E-5FDZh/preview">F8<span>Balança da Casa da Índia</span></button>
-          <button type="button" class="source-btn" data-title="F9 — Registo comercial do século XVI" data-img="https://drive.google.com/file/d/1gkYFYCocGnbTdXzjI_tmPLTThZmD0uzU/preview">F9<span>Registo, preços, moedas e medidas</span></button>
-          <button type="button" class="source-btn" data-title="F10 — Administração do comércio ultramarino" data-img="https://drive.google.com/file/d/14KOaspJEJWfrjTAPErhaaVsVWPq54Ujj/preview">F10<span>Casa da Índia e controlo régio</span></button>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="btn primary" id="downloadBtn">Descarregar resposta</button>
-        <button class="btn secondary" id="emailBtn">Abrir email</button>
-        <button class="btn secondary" id="modeloBtn">Inserir ajuda de início</button>
-        <div class="small">Consulta novamente as fontes antes de escrever a tua resposta.</div>
-        <div class="ok" id="okBox">Ficheiro descarregado com sucesso.</div>
-      </div>
-    </section>
-  </div>
-
-
-  <div class="modal" id="sourceModal" aria-hidden="true">
-    <div class="modal-content">
-      <div class="modal-head">
-        <h3 id="modalTitle">Fonte</h3>
-        <button type="button" class="close-btn" id="closeModalBtn">Fechar</button>
-      </div>
-      <div class="modal-body">
-        <iframe id="modalFrame" src="" title="Fonte da aula" allow="autoplay" loading="lazy"></iframe>
-      </div>
+    <div class="pista">
+      <strong>O que vais descobrir na próxima aula?</strong>
+      <span>Quem tornava possível esta riqueza e a que custo humano</span>
     </div>
   </div>
+</section>
 
-  <script>
-    const emailDestino = 'up202510257@up.pt';
-    const nome = document.getElementById('nome');
-    const turma = document.getElementById('turma');
-    const sintese = document.getElementById('sintese');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const emailBtn = document.getElementById('emailBtn');
-    const modeloBtn = document.getElementById('modeloBtn');
-    const okBox = document.getElementById('okBox');
+<section class="card">
 
-    function buildText() {
-      return [
-        'Nome do aluno: ' + (nome.value.trim() || '________________'),
-        'Turma: ' + (turma.value.trim() || '________________'),
-        '',
-        'Pergunta:',
-        'Quem trabalhava para tornar possível a riqueza do comércio ultramarino português?',
-        '',
-        'Resposta:',
-        (sintese.value.trim() || '________________')
-      ].join('\n');
-    }
+<div class="field">
+<input id="nome" placeholder="Nome">
+</div>
 
-    function safeFileName(value) {
-      return value
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-zA-Z0-9-_]+/g, '_')
-        .replace(/^_+|_+$/g, '') || 'aluno';
-    }
+<div class="field">
+<input id="turma" placeholder="Turma">
+</div>
 
-    downloadBtn.addEventListener('click', () => {
-      const text = buildText();
-      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      const fileNome = safeFileName(nome.value) + '_' + safeFileName(turma.value || 'turma') + '_tpc_comercio_ultramarino.txt';
-      a.href = url;
-      a.download = fileNome;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      okBox.style.display = 'block';
-      setTimeout(() => okBox.style.display = 'none', 2500);
-    });
+<div class="field">
+<textarea id="sintese" placeholder="Escreve aqui a tua resposta..."></textarea>
+</div>
 
-    emailBtn.addEventListener('click', () => {
-      const subject = encodeURIComponent('TPC — Comércio ultramarino português');
-      const body = encodeURIComponent(buildText());
-      window.location.href = 'mailto:' + emailDestino + '?subject=' + subject + '&body=' + body;
-    });
+<div class="check">
+Antes de terminares, verifica se referiste:
+<ul>
+<li>quem trabalhava</li>
+<li>que tarefas realizavam</li>
+<li>quem beneficiava</li>
+</ul>
+</div>
 
+<div class="actions">
+<button class="btn primary" id="downloadBtn">Descarregar resposta</button>
+<button class="btn secondary" id="emailBtn">Abrir email</button>
+<div class="small">Usa as pistas e as fontes da aula.</div>
+<div class="ok" id="okBox">Guardado!</div>
+</div>
 
-    const sourceButtons = document.querySelectorAll('.source-btn');
-    const sourceModal = document.getElementById('sourceModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalFrame = document.getElementById('modalFrame');
-    const closeModalBtn = document.getElementById('closeModalBtn');
+</section>
 
-    sourceButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        modalTitle.textContent = btn.dataset.title;
-        modalFrame.src = btn.dataset.img;
-        sourceModal.style.display = 'block';
-        sourceModal.setAttribute('aria-hidden', 'false');
-      });
-    });
+</div>
 
-    function closeModal() {
-      sourceModal.style.display = 'none';
-      sourceModal.setAttribute('aria-hidden', 'true');
-      modalFrame.src = '';
-    }
+<script>
 
-    closeModalBtn.addEventListener('click', closeModal);
+const nome=document.getElementById('nome');
+const turma=document.getElementById('turma');
+const sintese=document.getElementById('sintese');
+const okBox=document.getElementById('okBox');
 
-    sourceModal.addEventListener('click', (e) => {
-      if (e.target === sourceModal) closeModal();
-    });
+function buildText(){
+ return nome.value+"\n"+turma.value+"\n\n"+sintese.value;
+}
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && sourceModal.style.display === 'block') closeModal();
-    });
+document.getElementById('downloadBtn').onclick=()=>{
+ let blob=new Blob([buildText()],{type:'text/plain'});
+ let a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);
+ a.download="tpc.txt";
+ a.click();
+ okBox.style.display='block';
+}
 
-    modeloBtn.addEventListener('click', () => {
-      if (!sintese.value.trim()) {
-        sintese.value = 'Marinheiros, trabalhadores portuários, mercadores e outros grupos deviam trabalhar para que as mercadorias fossem produzidas, transportadas e vendidas no comércio ultramarino português.';
-      }
-      sintese.focus();
-    });
-  </script>
+document.getElementById('emailBtn').onclick=()=>{
+ window.location.href="mailto:up202510257@up.pt?subject=TPC&body="+encodeURIComponent(buildText());
+}
+
+</script>
+
 </body>
 </html>
